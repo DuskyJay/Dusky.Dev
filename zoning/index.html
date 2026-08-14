@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <style>body {
+        font-family: Arial, sans-serif;
+        background-color: #241f31;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+        }
+        .clock-container {
+        background: rgb(94, 92, 100);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 350px;
+        }
+        h2 {
+        font-size: 28px;
+        color: #9141ac;
+        background: #3d3846;
+        padding: 10px;
+        border-radius: 5px;
+        }
+        .clock {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 10px 0;
+        }</style>
+    </head>
+    <body>
+        <div class="clock-container">
+            <h2>Time Zoning</h2>
+            <div class="clock" id="duskyTime">Dusky: --:--:--</div>
+            <div class="clock" id="mitzTime">Mitz: --:--:--</div>
+            <div class="clock" id="chromaTime">Chroma: --:--:--</div>
+            <div class="clock" id="zenithTime">Zenith: --:--:--</div>
+        </div>
+        <script src="script.js">
+        </script>
+        <script>function updateTime() {
+        const chromaTime = new Date().toLocaleTimeString("en-US", {
+        timeZone: "Etc/GMT+4",
+        hour12: true,
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+        });
+        document.getElementById("chromaTime").textContent = "Chroma: " + chromaTime;
+
+        const zenithTime = new Date().toLocaleTimeString("en-US", {
+        timeZone: "Etc/GMT+4",
+        hour12: true,
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+        });
+        document.getElementById("zenithTime").textContent = "Zenith: " + zenithTime;
+
+        const duskyTime = new Date().toLocaleTimeString("en-US", {
+        timeZone: "Etc/GMT-10",
+        hour12: true,
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+        });
+        document.getElementById("duskyTime").textContent = "Dusky: " + duskyTime;
+
+        const mitzTime = new Date().toLocaleTimeString("en-US", {
+        timeZone: "Etc/GMT-2",
+        hour12: true,
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+        });
+        document.getElementById("mitzTime").textContent = "Mitz: " + mitzTime;
+        }
+
+        setInterval(updateTime, 1000);
+        updateTime();</script>
+    </body>
+</html>
