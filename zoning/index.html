@@ -37,7 +37,7 @@
             <div class="clock" id="duskyTime">Dusky: --:--:--</div>
             <div class="clock" id="mitzTime">Mitz: --:--:--</div>
             <div class="clock" id="chromaTime">Chroma: --:--:--</div>
-            <div class="clock" id="zenithTime">Zenith: --:--:--</div>
+            <div class="clock" id="zethinTime">Zethin: --:--:--</div>
         </div>
         <script src="script.js">
         </script>
@@ -51,14 +51,14 @@
         });
         document.getElementById("chromaTime").textContent = "Chroma: " + chromaTime;
 
-        const zenithTime = new Date().toLocaleTimeString("en-US", {
+        const zethinTime = new Date().toLocaleTimeString("en-US", {
         timeZone: "Etc/GMT+4",
         hour12: true,
         hour: '2-digit',
         minute: '2-digit',
         second: '2-digit'
         });
-        document.getElementById("zenithTime").textContent = "Zenith: " + zenithTime;
+        document.getElementById("zethinTime").textContent = "Zethin: " + zethinTime;
 
         const duskyTime = new Date().toLocaleTimeString("en-US", {
         timeZone: "Etc/GMT-10",
